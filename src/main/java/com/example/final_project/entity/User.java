@@ -38,10 +38,10 @@ public class User {
     private RoleType role;
 
    public User(String firstName, String lastName, String email, String password, RoleType role) {
-       this.email=email;
-       this.password=password;
        this.firstName=firstName;
        this.lastName=lastName;
+       this.email=email;
+       this.password=password;
        this.role=role;
    }
 

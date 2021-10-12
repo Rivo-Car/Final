@@ -5,6 +5,9 @@
     <title>Hello World!</title>
 </head>
 <body>
+<button type="button" th:text="#{switch-en}" onclick="window.location.href='http://localhost:9999/users/?lang=en'"></button>
+<button type="button" th:text="#{switch-ru}" onclick="window.location.href='http://localhost:9999/users/?lang=ru'"></button>  <!-- 3 -->
+
 <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>
