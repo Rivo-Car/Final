@@ -10,7 +10,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
 @Entity
 @Table( name="user",
         uniqueConstraints={@UniqueConstraint(columnNames={"email"})})

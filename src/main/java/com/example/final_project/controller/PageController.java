@@ -27,6 +27,7 @@ public class PageController {
     String index() {
         return "index";
     }
+
     @PostMapping("/process_register")
     public String processRegister(User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -45,10 +46,7 @@ public class PageController {
         return "page1";
     }
 
-    //@GetMapping("/login")
-    //String page2() {
-      //  return "login/login";
-    //}
+
 
     @GetMapping("/signup")
     String registration(Model model) {
@@ -58,8 +56,8 @@ public class PageController {
 
     @GetMapping("/users")
     public String listUsers(Model model) {
-        List<User> listUsers = userRepo.findAll();
-        model.addAttribute("listUsers", listUsers);
+       // List<User> listUsers = userRepo.findAll();
+        //model.addAttribute("listUsers", listUsers);
 
         return "user/userpage";
     }

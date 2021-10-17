@@ -1,9 +1,7 @@
 package com.example.final_project.service;
 
-import com.example.final_project.exception.UserException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import com.example.final_project.dto.UserDTO;
 import com.example.final_project.entity.User;
