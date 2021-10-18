@@ -2,27 +2,29 @@ package com.example.final_project.util;
 
 import  com.example.final_project.entity.*;
 import com.example.final_project.dto.*;
+import lombok.Builder;
 
+@Builder
 public class Mapper {
     //TODO Builders
     public static Route RouteDTOToRoute(RouteDTO routeDTO){
-        Route route = new Route();
-        route.setId(routeDTO.getId());
-        route.setStartStation(routeDTO.getStartStation());
-        route.setStartDateTime(routeDTO.getStartDateTime());
-        route.setFinishDateTime(routeDTO.getFinishDateTime());
-        route.setFinishStation(routeDTO.getFinishStation());
-        return route;
+        return Route.builder()
+                .Id(routeDTO.getId())
+                .StartStation(routeDTO.getStartStation())
+                .StartDateTime(routeDTO.getStartDateTime())
+                .FinishStation(routeDTO.getFinishStation())
+                .FinishDateTime(routeDTO.getFinishDateTime())
+                .build();
     }
 
     public static RouteDTO RouteToRouteDTO(Route route){
-        RouteDTO routeDTO = new RouteDTO();
-        routeDTO.setId(route.getId());
-        routeDTO.setStartStation(route.getStartStation());
-        routeDTO.setStartDateTime(route.getStartDateTime());
-        routeDTO.setFinishDateTime(route.getFinishDateTime());
-        routeDTO.setFinishStation(route.getFinishStation());
-        return routeDTO;
+        return RouteDTO.builder()
+                .Id(route.getId())
+                .StartStation(route.getStartStation())
+                .StartDateTime(route.getStartDateTime())
+                .FinishStation(route.getFinishStation())
+                .FinishDateTime(route.getFinishDateTime())
+                .build();
     }
 
 }

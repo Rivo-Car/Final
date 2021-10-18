@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 @Slf4j
 @Service
@@ -47,20 +50,16 @@ public class RouteService {
         routeRepository.delete(route);
     }
 
-    public List<RouteDTO> findAllByStartStationAndFinishDateTime(String Departure, String Arrival) {
-        try {
-            return routeRepository.findAll().stream()
-                    .filter(i -> i.getStartStation().equals(Departure))
-                    .filter(i -> i.getFinishStation().equals(Arrival))
+    public List<RouteDTO> findRoutesByStartStationAndFinishStation(String Departure, String Arrival) {
+        List<Route> foundList = routeRepository
+                .findRoutesByStartStationAndFinishStation(Departure, Arrival);
+        if (!foundList.isEmpty()) {
+            return foundList.stream()
                     .map(Mapper::RouteToRouteDTO)
                     .toList();
-        } catch (NullPointerException e) {
-            log.info("Departure or Arrival is not given");
         }
-
         return routeRepository.findAll().stream()
                 .map(Mapper::RouteToRouteDTO)
                 .toList();
     }
-
 }
