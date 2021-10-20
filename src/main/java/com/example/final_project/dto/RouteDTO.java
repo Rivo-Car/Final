@@ -27,4 +27,12 @@ public class RouteDTO {
 
     @DateTimeFormat(pattern="dd.MM.yyyy HH:mm")
     private LocalDateTime FinishDateTime;
+
+    public String toString(){
+       return StartStation + " "
+               + StartDateTime.toString()
+               + " -- "
+               + FinishStation + " "
+               + FinishDateTime.toString();
+    }
 }

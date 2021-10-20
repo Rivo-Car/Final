@@ -27,4 +27,17 @@ public class Mapper {
                 .build();
     }
 
+    public static TrainDTO TrainToTrainDTO(Train train){
+        return TrainDTO.builder()
+                .number(train.getNumber())
+                .StartStation(train.getStartStation())
+                .StartDateTime(train.getStartDateTime())
+                .FinishDateTime(train.getFinishDateTime())
+                .FinishStation(train.getFinishStation())
+                .NumberOfFreeSeats(train.getNumberOfFreeSeats())
+                .TimeToTravel(train.getTimeToTravel())
+                .Price(train.getPrice())
+                .build();
+    }
+
 }
